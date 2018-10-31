@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t tjdalsvndn9/react-docker -f Dockerfile.dev .
+script:
+  - docker run -p 3000:3000 tjdalsvndn9/react-docker npm run test -- --coverage
+
+  
