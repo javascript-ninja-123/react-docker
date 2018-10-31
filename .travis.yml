@@ -6,4 +6,15 @@ before_install:
 script:
   - docker run -p 3000:3000 tjdalsvndn9/react-docker npm run test -- --coverage
 
-  
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  access_key_id: "$ACCESS_KEY"
+  secret_access_key:
+    secure: "$ACCESS_SECRET_KEY"
+  app: "docker-react-123"
+  env: "DockerReact123-env"
+  bucket_name: "elasticbeanstalk-us-west-2-068256264622"
+  bucket_path: "docker-react-123"
+  on:
+    branch: master
