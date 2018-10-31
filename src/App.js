@@ -17,7 +17,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            wewe React
+            wewe wwww
           </a>
         </header>
       </div>
